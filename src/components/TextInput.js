@@ -1,7 +1,6 @@
 import React from 'react';
 
 function TextInput(params) {
-    console.log(params.onChange);
     let isPassword = false;
     const isCallback = params.onChange !== undefined;
 
