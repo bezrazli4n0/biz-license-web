@@ -6,6 +6,7 @@ function SoftwareSelector(params) {
             <select className="custom-select" onChange={ (event) => params.onChange(event.target.value) }>
                 <option value="0">Home Biz Scraper</option>
                 <option value="1">Local Biz Lead Finder</option>
+                <option value="2">Guru Fan Scraper</option>
             </select>
         </div>
     );

@@ -4,7 +4,7 @@ import TextInput from './components/TextInput';
 import SoftwareSelector from './components/SoftwareSelector';
 
 function App() {
-    const [state, setState] = useState({ hwid: '', password: '', softwareID: -1 });
+    const [state, setState] = useState({ hwid: '', password: '', softwareID: 0 });
     const [keyState, setKeyState] = useState('');
     
     function onChangeHwid(hwid) {
@@ -32,7 +32,20 @@ function App() {
     }
 
     function onClick() {
-        setKeyState('KEY!@');
+        fetch('https://xlcd29blx5.execute-api.us-east-2.amazonaws.com/prod/biz_license_generator', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                hwid: state.hwid,
+                password: state.password,
+                softwareid: parseInt(state.softwareID, 10)
+            })
+        })
+        .then(resp => resp.json())
+        .then(data => setKeyState(data.body));
     }
 
     return (
