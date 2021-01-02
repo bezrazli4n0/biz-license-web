@@ -7,6 +7,7 @@ function SoftwareSelector(params) {
                 <option value="0">Home Biz Scraper</option>
                 <option value="1">Local Biz Lead Finder</option>
                 <option value="2">Guru Fan Scraper</option>
+                <option value="3">Friend Fetcher</option>
             </select>
         </div>
     );
