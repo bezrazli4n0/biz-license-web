@@ -32,7 +32,7 @@ function App() {
     }
 
     function onClick() {
-        fetch('https://xlcd29blx5.execute-api.us-east-2.amazonaws.com/prod/biz_license_generator', {
+        fetch('https://ndaejzf41j.execute-api.us-east-2.amazonaws.com/default/biz_license_generator', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
